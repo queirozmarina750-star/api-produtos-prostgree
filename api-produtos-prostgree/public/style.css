@@ -1,0 +1,28 @@
+/* ============================================= */
+/* Estilos ADICIONAIS para os novos campos       */
+/* Adicione ao final do seu style.css existente  */
+/* ============================================= */
+
+/* Linha de formulário com múltiplos campos lado a lado */
+.form-row {
+  display: flex;       /* Ativa o layout flexível */
+  gap: 15px;           /* Espaço entre os campos  */
+  flex-wrap: wrap;     /* Em telas pequenas, empilha */
+}
+
+/* Proporção dos campos dentro do form-row */
+.flex-1 { flex: 1; }  /* Ocupa 1 parte do espaço */
+.flex-2 { flex: 2; }  /* Ocupa 2 partes do espaço */
+.flex-3 { flex: 3; }  /* Ocupa 3 partes do espaço */
+
+/* Dentro do form-row, o form-group não tem margin-bottom */
+.form-row .form-group {
+  margin-bottom: 0;
+}
+
+/* Responsividade: em telas menores, empilha tudo */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
