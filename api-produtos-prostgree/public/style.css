@@ -1,28 +1,91 @@
-/* ============================================= */
-/* Estilos ADICIONAIS para os novos campos       */
-/* Adicione ao final do seu style.css existente  */
-/* ============================================= */
-
-/* Linha de formulário com múltiplos campos lado a lado */
-.form-row {
-  display: flex;       /* Ativa o layout flexível */
-  gap: 15px;           /* Espaço entre os campos  */
-  flex-wrap: wrap;     /* Em telas pequenas, empilha */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
 }
 
-/* Proporção dos campos dentro do form-row */
-.flex-1 { flex: 1; }  /* Ocupa 1 parte do espaço */
-.flex-2 { flex: 2; }  /* Ocupa 2 partes do espaço */
-.flex-3 { flex: 3; }  /* Ocupa 3 partes do espaço */
-
-/* Dentro do form-row, o form-group não tem margin-bottom */
-.form-row .form-group {
-  margin-bottom: 0;
+/* MENU */
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background: #333;
+  padding: 15px;
 }
 
-/* Responsividade: em telas menores, empilha tudo */
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HOME */
+.home {
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+}
+
+/* FORM */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 10px;
+}
+
+/* BOTÕES */
+.btn {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary { background: blue; color: white; }
+.btn-secondary { background: gray; color: white; }
+
+/* GRUPO */
+.grupo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.linha {
+  display: flex;
+  gap: 30px;
+}
+
+.membro {
+  text-align: center;
+}
+
+.membro img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 0;   /* quadrado */
+  border: none;       /* sem borda */
+}
+
+/* RESPONSIVO */
 @media (max-width: 600px) {
-  .form-row {
+  .menu {
+    flex-direction: column;
+  }
+
+  .linha {
     flex-direction: column;
   }
 }
