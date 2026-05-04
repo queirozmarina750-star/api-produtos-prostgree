@@ -2,10 +2,11 @@
 // APP.JS - Arquivo Principal com dotenv
 // ============================================================
 
-// Carregar variáveis de ambiente ANTES de tudo
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors'); // 🔥 ADICIONADO
+
 const app = express();
 
 // Porta vem do .env, ou usa 3000 como padrão
@@ -14,6 +15,9 @@ const PORT = process.env.PORT || 3000;
 // ============================================================
 // MIDDLEWARES
 // ============================================================
+
+// 🔥 LIBERAR ACESSO DO FRONT (RESOLVE SEU ERRO)
+app.use(cors());
 
 // Serve arquivos estáticos (frontend)
 app.use(express.static('public'));

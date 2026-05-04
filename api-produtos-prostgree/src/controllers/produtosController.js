@@ -17,7 +17,6 @@ async function listarTodos(req, res) {
     });
   }
 }
-
 // ============================================================
 // FUNÇÃO: buscarPorId (ASSÍNCRONA)
 // ROTA: GET /produtos/:id
@@ -32,7 +31,7 @@ async function buscarPorId(req, res) {
       });
     }
     
-    const produto = await ProdutosModel.buscarPorId(id);
+    const produto = await ProdutoModel.buscarPorId(id);
     
     if (produto) {
       res.status(200).json(produto);
@@ -40,7 +39,7 @@ async function buscarPorId(req, res) {
       res.status(404).json({ 
         mensagem: `Produto ${id} não encontrado` 
       });
-    }
+ }
   } catch (erro) {
     res.status(500).json({ 
       mensagem: 'Erro ao buscar produto',
@@ -63,8 +62,7 @@ async function criar(req, res) {
         mensagem: 'Todos os campos são obrigatórios' 
       });
     }
-    
-    if (parseFloat(preco) <= 0) {
+ if (parseFloat(preco) <= 0) {
       return res.status(400).json({ 
         mensagem: 'O preço deve ser maior que zero' 
       });
@@ -112,8 +110,7 @@ async function atualizar(req, res) {
         mensagem: 'Todos os campos são obrigatórios' 
       });
     }
-    
-    const produtoAtualizado = await ProdutoModel.atualizar(id, { 
+ const produtoAtualizado = await ProdutoModel.atualizar(id, { 
       nome, 
       preco, 
       estoque, 
@@ -148,8 +145,7 @@ async function deletar(req, res) {
         mensagem: 'ID inválido' 
       });
     }
-    
-    const deletado = await ProdutoModel.deletar(id);
+ const deletado = await ProdutoModel.deletar(id);
     
     if (deletado) {
       res.status(200).json({ 
@@ -184,7 +180,6 @@ async function buscarPorCategoria(req, res) {
     });
   }
 }
-
 // ============================================================
 // EXPORTAR TODAS AS FUNÇÕES
 // ============================================================

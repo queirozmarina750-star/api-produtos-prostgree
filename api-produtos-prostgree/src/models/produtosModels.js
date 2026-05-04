@@ -17,7 +17,6 @@ async function listarTodos() {
   // Os dados ficam em result.rows
   return result.rows;
 }
-
 // ============================================================
 // FUNÇÃO: buscarPorId
 // DESCRIÇÃO: Busca um produto específico
@@ -62,7 +61,6 @@ async function criar(dados) {
   // O produto inserido com o ID gerado pelo banco
   return result.rows[0];
 }
-
 // ============================================================
 // FUNÇÃO: atualizar
 // DESCRIÇÃO: Atualiza todos os dados de um produto
@@ -88,7 +86,6 @@ async function atualizar(id, dados) {
   // Se não atualizou nenhuma linha, retorna null
   return result.rows[0] || null;
 }
-
 // ============================================================
 // FUNÇÃO: deletar
 // DESCRIÇÃO: Remove um produto do banco
@@ -113,7 +110,7 @@ async function deletar(id) {
 // RETORNO: Promise com array de produtos
 // ============================================================
 async function buscarPorCategoria(categoria) {
-  // ILIKE é o LIKE case-insensitive do PostgreSQL
+ // ILIKE é o LIKE case-insensitive do PostgreSQL
   // (no SQLite usávamos LIKE normal)
   const sql = 'SELECT * FROM produtos WHERE categoria ILIKE $1';
   

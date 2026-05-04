@@ -50,6 +50,7 @@ const criarTabela = async () => {
       preco      DECIMAL(10,2)  NOT NULL,
       estoque    INTEGER        NOT NULL,
       categoria  VARCHAR(100)   NOT NULL,
+      criado_em  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
   `;
   

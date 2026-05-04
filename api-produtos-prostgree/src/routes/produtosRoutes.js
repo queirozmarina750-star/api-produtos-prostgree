@@ -17,7 +17,6 @@ router.get('/categoria/:categoria', ProdutoController.buscarPorCategoria);
 
 // GET /produtos/:id - Buscar produto específico por ID
 router.get('/:id', ProdutoController.buscarPorId);
-
 // POST /produtos - Criar novo produto
 router.post('/', ProdutoController.criar);
 
